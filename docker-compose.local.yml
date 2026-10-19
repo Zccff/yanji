@@ -1,0 +1,25 @@
+services:
+  rabbitmq:
+    container_name: devflow-ai-local-rabbitmq
+  postgres:
+    container_name: devflow-ai-local-postgres
+    ports: !override
+      - "127.0.0.1:25432:5432"
+  etcd:
+    container_name: devflow-ai-local-etcd
+  minio:
+    container_name: devflow-ai-local-minio
+    ports: !override
+      - "127.0.0.1:19000:9000"
+      - "127.0.0.1:19001:9001"
+  milvus:
+    container_name: devflow-ai-local-milvus
+    ports: !override
+      - "127.0.0.1:29530:19530"
+      - "127.0.0.1:19091:9091"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 10s
+      timeout: 5s
+      start_period: 60s
+      retries: 20

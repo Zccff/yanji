@@ -1,0 +1,493 @@
+{
+  "checked_on": "2026-10-12",
+  "sources": [
+    {
+      "id": "main",
+      "title": "应用入口与路由装配",
+      "file": "backend/app/main.py",
+      "start": 45,
+      "end": 66,
+      "hash": "c77167483cc205e6dd38b41d4637ebf9bcb6a5521644bc8534dd0617df04d2bf"
+    },
+    {
+      "id": "chat_entry",
+      "title": "一次聊天的完整入口",
+      "file": "backend/app/api/routes/chat.py",
+      "start": 1670,
+      "end": 1702,
+      "hash": "b15211e26f8855380988b3f7ad42d962aa013b42bb6abd401e271ea8ce42dc44"
+    },
+    {
+      "id": "models",
+      "title": "研发事实的数据模型",
+      "file": "backend/app/db/models.py",
+      "start": 89,
+      "end": 110,
+      "hash": "5a643d0bd49e50c6750b30034abc2bbbbdcdb4c34f7547d30010def7d0079af4"
+    },
+    {
+      "id": "source_policy",
+      "title": "哪些来源进入 RAG",
+      "file": "backend/app/services/rag/source_policy.py",
+      "start": 9,
+      "end": 37,
+      "hash": "6cf67086b60e555d8e46762c0f98b4b091e670a8c0f2cb2746d497e81996d53d"
+    },
+    {
+      "id": "connect",
+      "title": "接入仓库后同步两条通道",
+      "file": "backend/app/api/routes/repos.py",
+      "start": 228,
+      "end": 243,
+      "hash": "934484e3c48c7c6263eabe74e1721f78e256edcbe3218fba1a5db4ecb7ef6688"
+    },
+    {
+      "id": "sync",
+      "title": "按远端对象更新 Issue",
+      "file": "backend/app/services/repos_sync.py",
+      "start": 40,
+      "end": 62,
+      "hash": "10a2ab5ab8849ddf62c0f6d7173027273c34ec4f4380750d4f3a9f4503a67b1e"
+    },
+    {
+      "id": "github_page",
+      "title": "GitHub 列表只取第一页",
+      "file": "backend/app/services/github/pull_requests.py",
+      "start": 4,
+      "end": 16,
+      "hash": "62e1efaa3dc87b9ddfb1578c9e8940ed149181847b98c3aa80d4353820e2fdc1"
+    },
+    {
+      "id": "checkout",
+      "title": "浅克隆与本地目录处理",
+      "file": "backend/app/services/code_analysis.py",
+      "start": 165,
+      "end": 200,
+      "hash": "bdbd52eb42ab904627e037fb5f0a3d69025458eec2c19a84e0e6ace49088c1de"
+    },
+    {
+      "id": "scheduler",
+      "title": "定时同步没有源码更新任务",
+      "file": "backend/app/services/scheduler.py",
+      "start": 13,
+      "end": 29,
+      "hash": "3f3253ed68e9eea7d876a00664537c1c5c5dbffed442011d64f62cdf4169c8a5"
+    },
+    {
+      "id": "webhook",
+      "title": "Webhook 事件触发 API 同步",
+      "file": "backend/app/api/routes/webhooks.py",
+      "start": 54,
+      "end": 58,
+      "hash": "8286637fb5a0eaf243e3d0b85f1f459bfdf1c7463a119f1667d89ee920331863"
+    },
+    {
+      "id": "workspace",
+      "title": "工作区读取的路径边界",
+      "file": "backend/app/api/routes/chat.py",
+      "start": 426,
+      "end": 443,
+      "hash": "d0fae09cb4339add90f218e0b6ca6f67114312f7dcf67b712f198bc6b17a80d1"
+    },
+    {
+      "id": "graph",
+      "title": "LangGraph 模型—工具循环",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 394,
+      "end": 415,
+      "hash": "288f8ef9c0a6bff18491c556b526e630f87a832d491d93078a4f763d4c27a116"
+    },
+    {
+      "id": "bind",
+      "title": "把工具 Schema 交给模型",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 945,
+      "end": 949,
+      "hash": "db4917103c648fad00a42d73fc2f2dc94b63fabddf1feb714f3f307bce521959"
+    },
+    {
+      "id": "tool_action",
+      "title": "执行待办工具并回写状态",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 537,
+      "end": 551,
+      "hash": "2ce5902273e1d907cfc466760e9928d71dc6e5617442885f5f32a24374596cc6"
+    },
+    {
+      "id": "repeat",
+      "title": "重复调用指纹与刹车",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 610,
+      "end": 631,
+      "hash": "8a0262d01c12b0f7c9afad7bc52363cd29e14bf5913e208f78039d5d48ef57cb"
+    },
+    {
+      "id": "retry",
+      "title": "哪些工具错误允许重试",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 920,
+      "end": 944,
+      "hash": "25fded508802bc3d77746c8de2280eb38a972564496ea6508736fc42e06694a9"
+    },
+    {
+      "id": "tools",
+      "title": "工具适配器的真实注册入口",
+      "file": "backend/app/api/routes/chat.py",
+      "start": 935,
+      "end": 963,
+      "hash": "0469d032c76fe96ad5d155088218adc0f2131ecb01c8b235ad778ed97ee4b95c"
+    },
+    {
+      "id": "agent_issue",
+      "title": "Issue Agent：模型 + Schema + 规则兜底",
+      "file": "backend/app/services/agents/issue_agent.py",
+      "start": 18,
+      "end": 29,
+      "hash": "2a02f1174090bda3c0844ab0f47816f85e2f5caf5533c8a25486a4d9c5a3cb52"
+    },
+    {
+      "id": "agent_pr",
+      "title": "PR Agent：diff 切块与风险输出",
+      "file": "backend/app/services/agents/pr_review_agent.py",
+      "start": 18,
+      "end": 29,
+      "hash": "fa50508f13883479fcf2c94b9a3876f95b0d4ff3a7a44dcf76abcff089eea06f"
+    },
+    {
+      "id": "agent_ci",
+      "title": "CI Agent：失败日志到结构化排障",
+      "file": "backend/app/services/agents/ci_debug_agent.py",
+      "start": 18,
+      "end": 29,
+      "hash": "ff4266b4229af98c0a5765cd7f20ea1a91d18c08380b132d5485973b68216eba"
+    },
+    {
+      "id": "analysis_schema",
+      "title": "Issue 输出必须填写的答题纸",
+      "file": "backend/app/schemas/analysis.py",
+      "start": 25,
+      "end": 43,
+      "hash": "49350ee665f854c219771034e7b18736d614f89703cc93bb8182def7cbcf8eb4"
+    },
+    {
+      "id": "pr_context",
+      "title": "PR 分析证据组装",
+      "file": "backend/app/api/routes/pull_requests.py",
+      "start": 158,
+      "end": 181,
+      "hash": "3581a9a7dadb66222009d895d269832320b73bbbd10ff790717ebb6ea984689f"
+    },
+    {
+      "id": "ci_binding",
+      "title": "CI 关联 PR 的当前启发式",
+      "file": "backend/app/api/routes/ci.py",
+      "start": 179,
+      "end": 196,
+      "hash": "a916c541ec16ef83ed51d09477fa04b1562cda05c742e730f20bbd7fb54b8139"
+    },
+    {
+      "id": "pr_persist",
+      "title": "保存分析时没有完整版本绑定",
+      "file": "backend/app/api/routes/pull_requests.py",
+      "start": 348,
+      "end": 370,
+      "hash": "1b60ff980e110b62edf7f7a29df886e2fd5eb74a6cec39eaae79a24763747957"
+    },
+    {
+      "id": "workflow_spec",
+      "title": "任务图的数据契约",
+      "file": "backend/app/schemas/workflow.py",
+      "start": 26,
+      "end": 47,
+      "hash": "a6fe187cf21bb4f1665c9ef9feb2e7f35819a7ccd2c7f4a40d8d279f6f5fe78d"
+    },
+    {
+      "id": "dag",
+      "title": "就绪任务并发执行",
+      "file": "backend/app/services/agents/workflow_orchestrator.py",
+      "start": 194,
+      "end": 224,
+      "hash": "c443525d69c5fe4370df1c3155b4c088ae2e4955cc80b940782215500c239870"
+    },
+    {
+      "id": "timeout",
+      "title": "子任务超时与错误",
+      "file": "backend/app/services/agents/workflow_orchestrator.py",
+      "start": 240,
+      "end": 258,
+      "hash": "ef8b07bc779c0c33bda4a7b516a1c08699a97186fcbdbb4cb170cc4e9ce7bc9e"
+    },
+    {
+      "id": "replan",
+      "title": "有限重规划的边界",
+      "file": "backend/app/services/agents/workflow_orchestrator.py",
+      "start": 297,
+      "end": 320,
+      "hash": "5d96636f4c1ebd53f7cf7b557c113bef2613c9aa779175379b49b1f1ab052216"
+    },
+    {
+      "id": "observer",
+      "title": "Observer 检查失败、证据与冲突",
+      "file": "backend/app/services/agents/observer_agent.py",
+      "start": 14,
+      "end": 37,
+      "hash": "4615e6cc7fbda097d677f1984b9a7b3c92755c63c3163eb7be97024a27de43ae"
+    },
+    {
+      "id": "ingest",
+      "title": "解析、切片和 Embedding 入库",
+      "file": "backend/app/services/rag/document_processing.py",
+      "start": 70,
+      "end": 104,
+      "hash": "89ac674248c500e03f91e783de7ab6282460cd475c67e2ccaa85943d8728effe"
+    },
+    {
+      "id": "chunk",
+      "title": "结构感知切片入口",
+      "file": "backend/app/services/rag/chunking.py",
+      "start": 761,
+      "end": 784,
+      "hash": "d8a88ab3457cd5ce12933e92d01646881c7f003c55cc80cb655b1964b371f46e"
+    },
+    {
+      "id": "bm25",
+      "title": "关键词召回的 BM25 评分",
+      "file": "backend/app/services/rag/retrieval.py",
+      "start": 222,
+      "end": 240,
+      "hash": "464752122022de74a7ea03d007a17a8a84ec71acbef35f04947876d78119e24e"
+    },
+    {
+      "id": "fusion",
+      "title": "项目的真实加权融合公式",
+      "file": "backend/app/services/rag/retrieval.py",
+      "start": 349,
+      "end": 372,
+      "hash": "e1349a62a72b2389fe242d2ba7b293ec36dc25430f10e752673980b98feb8d31"
+    },
+    {
+      "id": "retrieval",
+      "title": "检索模式和 Milvus 降级",
+      "file": "backend/app/services/rag/retrieval.py",
+      "start": 586,
+      "end": 620,
+      "hash": "b36c3d21d82c6654f36354d791dccd4042afcb26d3f61c4a22ac80e70d3e3d73"
+    },
+    {
+      "id": "rerank",
+      "title": "API 重排和启发式 fallback",
+      "file": "backend/app/services/rag/knowledge_base.py",
+      "start": 281,
+      "end": 301,
+      "hash": "dad0e4eb5a9bd00b6ad8bbdb5002a5e67cc1b88b0b0de02e9f72cd5ebfb63046"
+    },
+    {
+      "id": "vector_scope",
+      "title": "向量查询也必须带仓库范围",
+      "file": "backend/app/services/rag/vector_store.py",
+      "start": 291,
+      "end": 314,
+      "hash": "b050122ffb583845a53671f47e870af6162fd94b331283b911de8a09da042ce5"
+    },
+    {
+      "id": "context",
+      "title": "上下文组装的四种来源",
+      "file": "backend/app/services/chat_memory.py",
+      "start": 463,
+      "end": 495,
+      "hash": "52770a99f4c9801def7c0671c3fd739d038a472388bdfe9910ad98d1f4146569"
+    },
+    {
+      "id": "pressure",
+      "title": "Token 压力分阶段计算",
+      "file": "backend/app/services/context_compression.py",
+      "start": 205,
+      "end": 229,
+      "hash": "45fe358f7fb2a6632a03205a2d9bc3b0d7be6d159d83fcba04eb4db259e7d8d0"
+    },
+    {
+      "id": "micro",
+      "title": "轻量整理旧的可再获取结果",
+      "file": "backend/app/services/context_compression.py",
+      "start": 515,
+      "end": 532,
+      "hash": "ff4cb0353857697da4b1191fc1e45677d840e9b4bf453d9eee7619063c4b412f"
+    },
+    {
+      "id": "compact",
+      "title": "正式压缩的渐进尝试",
+      "file": "backend/app/services/chat_memory.py",
+      "start": 717,
+      "end": 741,
+      "hash": "a8bc35cbac623bd4f4245f341c64e85401a480058a4a78ae7bce465334eac609"
+    },
+    {
+      "id": "memory_approval",
+      "title": "长期记忆候选审批",
+      "file": "backend/app/services/memory_hub.py",
+      "start": 178,
+      "end": 200,
+      "hash": "23556908465d5fecbf0f001b804a8caf9274bf226ad077b74c7f2c2f43ac2e8a"
+    },
+    {
+      "id": "mcp",
+      "title": "MCP 客户端真实调用生命周期",
+      "file": "backend/app/services/mcp_client.py",
+      "start": 23,
+      "end": 52,
+      "hash": "de86bae060365e8a40e65b9e85fafa423a328bf68817ceee4d3a94089ee4fe9b"
+    },
+    {
+      "id": "mcp_server",
+      "title": "MCP 服务端处理协议方法",
+      "file": "backend/app/mcp/memory_server.py",
+      "start": 196,
+      "end": 224,
+      "hash": "be55c3e6f6859d1d76c37c6133db17fcaa63c71d6af0336af116c312f64fb378"
+    },
+    {
+      "id": "mcp_tool",
+      "title": "Chat 工具接入 MCP 记忆服务",
+      "file": "backend/app/api/routes/chat.py",
+      "start": 941,
+      "end": 964,
+      "hash": "2f07bc758d08be83ded95a5431667c8698a1abf9de5d81c60d155839d723119f"
+    },
+    {
+      "id": "risk",
+      "title": "外部写意图只产生草稿",
+      "file": "backend/app/services/agents/safety_agent.py",
+      "start": 12,
+      "end": 40,
+      "hash": "5867f72d662cb898b533497eb4dff3c56aa030d9ab89d19ec3253997321635f7"
+    },
+    {
+      "id": "permissions",
+      "title": "轻量角色权限与演示身份来源",
+      "file": "backend/app/services/permissions.py",
+      "start": 35,
+      "end": 43,
+      "hash": "10c98e0380502b6091fdae415df8dd46dc94b959edbe502ca663940490433c9e"
+    },
+    {
+      "id": "confirm",
+      "title": "确认接口是外部执行闸门",
+      "file": "backend/app/api/routes/action_drafts.py",
+      "start": 158,
+      "end": 191,
+      "hash": "fc376213888cd6e803d46252a669e30e74d79064d2bcc1f11f240246e966ce17"
+    },
+    {
+      "id": "execute",
+      "title": "实际调用 GitHub 的分派器",
+      "file": "backend/app/api/routes/action_drafts.py",
+      "start": 35,
+      "end": 66,
+      "hash": "010bfe38787eef3bc15dd7c3db50f5a09e4df37b59ad77b087778201c1358f88"
+    },
+    {
+      "id": "audit",
+      "title": "创建审计记录",
+      "file": "backend/app/services/permissions.py",
+      "start": 45,
+      "end": 68,
+      "hash": "fb46b6bd4faf640c4d858a712964a56f22857abf2533573652d4a5a7bfb83926"
+    },
+    {
+      "id": "sse",
+      "title": "后端如何编码 SSE 帧",
+      "file": "backend/app/services/agents/chat_agent.py",
+      "start": 2065,
+      "end": 2066,
+      "hash": "f4026d7f5d1869966f40494f8a2d79058fc75ebf32540f05df0c52d83c17d636"
+    },
+    {
+      "id": "frontend_sse",
+      "title": "前端 POST 流的解帧",
+      "file": "frontend/lib/api.ts",
+      "start": 53,
+      "end": 76,
+      "hash": "d57a9be7cba77edac6e5004afb27727fc108ae143e93c73fc55aef96afc96d71"
+    },
+    {
+      "id": "persist",
+      "title": "工作流报告和任务记录入库",
+      "file": "backend/app/api/routes/chat.py",
+      "start": 889,
+      "end": 932,
+      "hash": "c4ab371b474d16c4b727be6a4e7f63c7b9958dca46eec394f64ad53d7b3877e5"
+    },
+    {
+      "id": "run_models",
+      "title": "GitHub Run 与 Agent Run 名字要分清",
+      "file": "backend/app/db/models.py",
+      "start": 465,
+      "end": 488,
+      "hash": "ce1cf0b003a332a86b6cc3b5740aa4141b509d3160a5cb3a38c3087ef2d97c1e"
+    },
+    {
+      "id": "eval",
+      "title": "真实 ChatAgent 路径的固定质量评测",
+      "file": "backend/app/services/evals/ragas_runner.py",
+      "start": 954,
+      "end": 982,
+      "hash": "073fbe49067d84bd06ee197d041d732d30145912b37d64805ae90244699335fc"
+    },
+    {
+      "id": "eval_metrics",
+      "title": "五项 RAGAS 指标配置",
+      "file": "backend/app/services/evals/ragas_runner.py",
+      "start": 197,
+      "end": 214,
+      "hash": "3fb5de941e9242f46eabe634f7e3892b0da439812ae88f5dc5ae2c25d61b5f8b"
+    },
+    {
+      "id": "report",
+      "title": "ReportAgent 是事实模板汇总",
+      "file": "backend/app/services/agents/report_agent.py",
+      "start": 11,
+      "end": 38,
+      "hash": "7e88c86af87d95a7703af58ef151a49887766879658e0a62e86d03b6d7b232d0"
+    },
+    {
+      "id": "multi_report",
+      "title": "多仓库报告的实际聚合口径",
+      "file": "backend/app/api/routes/workspaces.py",
+      "start": 82,
+      "end": 117,
+      "hash": "58964cf2f3d711d369d9aff981f1f68c484053a6f66a5b723b7f872ca26fe81f"
+    },
+    {
+      "id": "test_agent",
+      "title": "测试工具事件先于工具完成",
+      "file": "backend/app/tests/test_chat_agent.py",
+      "start": 411,
+      "end": 430,
+      "hash": "f7261ded015141daad1982125a31480f30c8efaceaf8365411239ae72a8d85d0"
+    },
+    {
+      "id": "test_workflow",
+      "title": "测试超时任务如何处理",
+      "file": "backend/app/tests/test_workflow_orchestrator.py",
+      "start": 359,
+      "end": 378,
+      "hash": "a843fa54cf174dbfc3a590a9c099664c05f07f8aa9952dfd139c1f67a42570a7"
+    },
+    {
+      "id": "test_rag",
+      "title": "测试真实加权融合与双路奖励",
+      "file": "backend/app/tests/test_rag_retrieval_pipeline.py",
+      "start": 103,
+      "end": 125,
+      "hash": "02a5cc1841fed48a3ca72be94ce9b6b071bf8e9359384b183218c75a691b6400"
+    },
+    {
+      "id": "test_compression",
+      "title": "测试压缩保护工具消息配对",
+      "file": "backend/app/tests/test_context_compression.py",
+      "start": 164,
+      "end": 182,
+      "hash": "d178eba30d39a570dd56adf491c587e0e66e44aa16ecd762c999aadd176d856e"
+    }
+  ]
+}

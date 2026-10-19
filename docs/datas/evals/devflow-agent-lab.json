@@ -1,0 +1,80 @@
+{
+  "name": "devflow-agent-lab-v1",
+  "label": "DevFlow 演示仓库固定知识回归",
+  "description": "先上传 lab-knowledge.md，再通过自定义 cases 运行。这里是参考答案，不是已测得的成绩。",
+  "schema_version": 1,
+  "repository_names": [
+    "yanji-agent-lab",
+    "Zccff/yanji-agent-lab",
+    "devflow-agent-lab",
+    "Zccff/devflow-agent-lab"
+  ],
+  "cases": [
+    {
+      "id": "expired-token-status",
+      "question": "DEVFLOW_LAB_POLICY_V1 中过期登录凭证应返回什么状态？为什么不能返回 500？",
+      "reference": "过期凭证应返回 401，因为身份认证已经失效；500 表示内部服务器错误。应检查 login 是否捕获 ExpiredTokenError。",
+      "source_file": "lab-knowledge.md",
+      "must_include": [
+        "401",
+        "500",
+        "ExpiredTokenError"
+      ]
+    },
+    {
+      "id": "money-rounding",
+      "question": "DEVFLOW_LAB_POLICY_V1 使用什么币种、金额类型和舍入方式？单价 2.675、数量 1 的金额是多少？",
+      "reference": "币种 CNY，使用 Decimal，保留两位小数，采用 ROUND_HALF_UP。2.675 乘以 1 应得到 2.68。",
+      "source_file": "lab-knowledge.md",
+      "must_include": [
+        "CNY",
+        "Decimal",
+        "ROUND_HALF_UP",
+        "2.68"
+      ]
+    },
+    {
+      "id": "maintenance-and-recovery",
+      "question": "DEVFLOW_LAB_POLICY_V1 的维护窗口和时区、回滚 RTO、备份 RPO 分别是什么？",
+      "reference": "每周三 20:00 至 20:30，Asia/Shanghai；回滚 RTO 10 分钟，备份 RPO 5 分钟。",
+      "source_file": "lab-knowledge.md",
+      "must_include": [
+        "20:00",
+        "20:30",
+        "Asia/Shanghai",
+        "10",
+        "5"
+      ]
+    },
+    {
+      "id": "ci-independent-failure",
+      "question": "DEVFLOW_LAB_POLICY_V1 的 missing-dependency 运行报什么错误，缺少哪个模块？它是否由登录 PR 导致？",
+      "reference": "报 ModuleNotFoundError，缺少虚构模块 lab_optional_gateway。这是独立手动故障演练，与登录 PR 没有因果关系。",
+      "source_file": "lab-knowledge.md",
+      "must_include": [
+        "ModuleNotFoundError",
+        "lab_optional_gateway"
+      ]
+    },
+    {
+      "id": "inventory-limit",
+      "question": "DEVFLOW_LAB_POLICY_V1 的单次购买上限是多少？超过上限会扣减库存吗？",
+      "reference": "单次购买上限 5 件。超过 5 件返回业务错误，不扣减库存。",
+      "source_file": "lab-knowledge.md",
+      "must_include": [
+        "5"
+      ]
+    },
+    {
+      "id": "unknown-revenue",
+      "question": "这个演示项目所属公司的真实季度营收是多少？",
+      "reference": "资料没有真实营收数据，应说明证据不足，不能编造金额。",
+      "source_file": "lab-knowledge.md",
+      "kind": "negative",
+      "must_not_include": [
+        "营收为 1000 万",
+        "revenue is 10000000"
+      ]
+    }
+  ]
+}
